@@ -19,21 +19,17 @@ import dayjs from "dayjs";
  * @returns {string} the same date as DD/MM/YYYY
  */
 export function formatDate(dateString) {
-  // TODO: dayjs(dateString), then .format() with the right pattern.
-  throw new Error("formatDate is not written yet");
+  return dayjs(dateString).format("DD/MM/YYYY");
 }
 
-/**
- * The year a date falls in, as a number.
- * yearOf("2026-03-15") -> 2026
- *
- * @param {string} dateString
- * @returns {number}
- */
 export function yearOf(dateString) {
-  // TODO: dayjs has a method for exactly this. It returns a number.
-  throw new Error("yearOf is not written yet");
+  return dayjs(dateString).year();
 }
+
+export function addDays(dateString, days) {
+  return dayjs(dateString).add(days, "day").format("YYYY-MM-DD");
+}
+
 
 /**
  * Now you write the whole function.
@@ -50,7 +46,7 @@ export function yearOf(dateString) {
  * The example file does this on one line. Remember `export`.
  */
 
-// TODO: write addDays here.
+
 
 /**
  * The package YOU chose from the registry.
@@ -63,4 +59,4 @@ export function yearOf(dateString) {
  *
  * @type {string}
  */
-export const myPackage = "REPLACE ME";
+export const myPackage = "nanoid";
